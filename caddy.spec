@@ -12,7 +12,7 @@ License:       ASL 2.0
 Source0:       https://github.com/caddyserver/caddy/releases/download/v%{version}/caddy_%{version}_linux_amd64.tar.gz
 Source1:       https://raw.githubusercontent.com/caddyserver/dist/v%{version}/init/caddy.service
 Source2:       https://raw.githubusercontent.com/caddyserver/dist/v%{version}/init/caddy-api.service
-Source3:       Caddyfile
+Source3:       https://raw.githubusercontent.com/lkiesow/caddy-rpm/main/Caddyfile
 URL:           https://caddyserver.com
 
 BuildRequires:     systemd
