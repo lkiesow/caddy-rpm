@@ -6,7 +6,7 @@
 Name:          caddy
 Summary:       Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS
 Version:       2.6.2
-Release:       0%{?dist}
+Release:       1%{?dist}
 License:       ASL 2.0
 
 Source0:       https://github.com/caddyserver/caddy/releases/download/v%{version}/caddy_%{version}_linux_amd64.tar.gz
@@ -72,7 +72,7 @@ if [ ! $(getent group %{gid}) ]; then
 	groupadd -r %{gid} > /dev/null 2>&1 || :
 fi
 if [ ! $(getent passwd %{uid}) ]; then
-	useradd -M -r -d %{_sharedstatedir}/minio -g %{gid} %{uid} > /dev/null 2>&1 || :
+	useradd -M -r -d %{_sharedstatedir}/%{name} -g %{gid} %{uid} > /dev/null 2>&1 || :
 fi
 
 
@@ -99,5 +99,8 @@ fi
 
 
 %changelog
+* Mon Nov 07 2022 Lars Kiesow <lkiesow@uos.de> - 2.6.2-1
+- Fix user home directory
+
 * Sun Nov 06 2022 Lars Kiesow <lkiesow@uos.de> - 2.6.2-0
 - Initial build
