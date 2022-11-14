@@ -1,3 +1,4 @@
+%global __strip /bin/true
 %define debug_package %{nil}
 
 %define  uid   caddy
@@ -6,7 +7,7 @@
 Name:          caddy
 Summary:       Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS
 Version:       2.6.2
-Release:       1%{?dist}
+Release:       3%{?dist}
 License:       ASL 2.0
 
 Source0:       https://github.com/caddyserver/caddy/releases/download/v%{version}/caddy_%{version}_linux_amd64.tar.gz
@@ -99,6 +100,9 @@ fi
 
 
 %changelog
+* Mon Nov 14 2022 Lars Kiesow <lkiesow@uos.de> - 2.6.2-3
+- Don't strip binary
+
 * Mon Nov 07 2022 Lars Kiesow <lkiesow@uos.de> - 2.6.2-1
 - Fix user home directory
 
